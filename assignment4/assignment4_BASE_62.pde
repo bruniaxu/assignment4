@@ -2,10 +2,7 @@
 //adding variables
 //array 
 penguin[] penguins;
-<<<<<<< HEAD
-=======
-int score = 0;
->>>>>>> scoring-system
+
 
 //setup
 void setup(){
@@ -16,12 +13,10 @@ void setup(){
    float startX = 40 + i * 60;
    float startY = 320;
    // some penguins are fake
-   boolean fakeOne = random(1) < 0.4;
+   boolean fakeOne = random(1) < 0.35;
    penguins[i] =new penguin(startX, startY, fakeOne);
    
   }
-  
-  
 }
 
 
@@ -41,29 +36,10 @@ void draw(){
   quad(130,45,270,45,270,75,130,75);
   ellipse(120,60,10,10);
   ellipse(280,60,10,10);
-  
- 
-  
   //display the penguins
   for (int i =0; i < penguins.length; i++){
     //call out
     penguins[i].display();
     penguins[i].move();
-    
   }
-  
-<<<<<<< HEAD
-   //display cursor and gun
-  launcher();
-=======
-  
-  //draw text on scoreboard
-  fill(255);//white
-  textAlign(CENTER, CENTER);//make text in center
-  textSize(20); 
-  text(score, 200, 60);
-  
-  
->>>>>>> scoring-system
-  
 }

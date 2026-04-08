@@ -52,9 +52,11 @@ class penguin {
     ellipse(90,278,22,24);//white
     fill(255,190,59);//orange
     ellipse(83,290,25,13);
-    //mouth/peak
+    //mouth/beak
     fill(0);
     ellipse(103,279,15,13);
+    fill(255,190,59);//orange
+    triangle(96,278,97,282,106,280);
     
     //draw face 
     //draw eyes

@@ -128,7 +128,18 @@ class penguin {
      ditto = random(1)<0.3;
    }
   }
-  
+   // reset fake penguin after hit
+  void resetPenguin() {
+    position.x = -random(40, 120);
+    ditto = random(1) < 0.3;
+    real = true;
+  }
+
+  // hit detection
+  boolean hitBall(ball b) {
+    float d = dist(position.x, position.y - 35, b.x, b.y);
+    return d < 25;
+  }
   
   
 }

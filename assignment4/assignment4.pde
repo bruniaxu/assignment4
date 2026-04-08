@@ -2,7 +2,7 @@
 //adding variables
 //array 
 penguin[] penguins;
-
+int score = 0;
 //setup
 void setup(){
   size(400,400);
@@ -45,9 +45,15 @@ void draw(){
     //call out
     penguins[i].display();
     penguins[i].move();
+    
   }
   
-   //display cursor and gun
-  launcher();
+  //draw text on scoreboard
+  fill(255);//white
+  textAlign(CENTER, CENTER);//make text in center
+  textSize(20); 
+  text(score, 200, 60);
+  
+  
   
 }

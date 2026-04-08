@@ -1,10 +1,33 @@
-penguin pengy;
+//penguin pengy;
   
   
 class penguin {
+  //adding variables
+  //PVector
+  PVector position;
+  PVector velocity;
+  PVector acceleration;
+  //setting boolean for real and fake penguins
+  boolean real = true;
+  boolean ditto;//fake
+  
+  penguin(float x,float y, boolean fake){
+    position = new PVector(x,y);
+    velocity = new PVector(random(1,2),0);
+    acceleration = new PVector(0,0);
+    ditto = fake;
+  }
   
   void display(){
-     //draw the penguin
+    if(!real){
+      return;
+    }
+    //save current spot
+    pushMatrix();
+    //make it display in different location
+    translate(position.x-82, position.y-320);
+    
+    //draw the penguin 
     fill(0);
     noStroke();
     fill(203,203,203);//light grey
@@ -58,12 +81,7 @@ class penguin {
     fill(255,190,59);//orange
     triangle(96,278,97,282,106,280);
     
-    //draw face 
-    //draw eyes
-    fill(82,210,255);//blue
-    ellipse(89,278,6,6);
-    fill(0);
-    ellipse(89,278,5,5);
+   
     
     //draw crown
     stroke(198,185,64);
@@ -80,6 +98,39 @@ class penguin {
     ellipse(75,250,3,3);//left
     ellipse(85,250,3,3);//right
     ellipse(80,249,3,3);//mid
-  
+    
+    if(ditto){
+      //draw the fake ones : ditto face
+      //draw ditto eyes
+      fill(0);
+      ellipse(89,278,3,3);
+    }else{
+      //draw face 
+      //draw eyes
+      fill(82,210,255);//blue
+      ellipse(89,278,6,6);
+      fill(0);
+      ellipse(89,278,5,5);
+      
+     
+      
+    }
+     //reset to original
+     popMatrix();
+    
   }
+  
+  void move(){
+    velocity.add(acceleration);
+    position.add(velocity);
+    
+   //make the loop
+   if (position.x>width+30){
+     position.x = -30;
+     ditto = random(1)<0.3;
+   }
+  }
+  
+  
+  
 }

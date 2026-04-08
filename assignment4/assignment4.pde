@@ -1,12 +1,22 @@
 //here's my assignment
-
+//adding variables
+//array 
+penguin[] penguins;
 
 
 //setup
 void setup(){
   size(400,400);
-  pengy = new penguin();
-  
+  //create more penguins
+  penguins = new penguin[6];
+  for (int i = 0; i < penguins.length; i++) {
+   float startX = 40 + i * 60;
+   float startY = 320;
+   // some penguins are fake
+   boolean fakeOne = random(1) < 0.35;
+   penguins[i] =new penguin(startX, startY, fakeOne);
+   
+  }
 }
 
 
@@ -26,7 +36,10 @@ void draw(){
   quad(130,45,270,45,270,75,130,75);
   ellipse(120,60,10,10);
   ellipse(280,60,10,10);
-  
-  pengy.display();
-  
+  //display the penguins
+  for (int i =0; i < penguins.length; i++){
+    //call out
+    penguins[i].display();
+    penguins[i].move();
+  }
 }

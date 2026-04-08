@@ -2,10 +2,10 @@
 //adding variables
 //array 
 penguin[] penguins;
-<<<<<<< HEAD
-=======
+//<<<<<<< HEAD
+//=======
 int score = 0;
->>>>>>> scoring-system
+//>>>>>>> scoring-system
 
 //setup
 void setup(){
@@ -52,10 +52,10 @@ void draw(){
     
   }
   
-<<<<<<< HEAD
+//<<<<<<< HEAD
    //display cursor and gun
   launcher();
-=======
+//=======
   
   //draw text on scoreboard
   fill(255);//white
@@ -64,6 +64,6 @@ void draw(){
   text(score, 200, 60);
   
   
->>>>>>> scoring-system
+//>>>>>>> scoring-system
   
 }

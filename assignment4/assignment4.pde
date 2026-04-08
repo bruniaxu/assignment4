@@ -3,7 +3,6 @@
 //array 
 penguin[] penguins;
 
-
 //setup
 void setup(){
   size(400,400);
@@ -17,6 +16,8 @@ void setup(){
    penguins[i] =new penguin(startX, startY, fakeOne);
    
   }
+  
+  
 }
 
 
@@ -36,10 +37,17 @@ void draw(){
   quad(130,45,270,45,270,75,130,75);
   ellipse(120,60,10,10);
   ellipse(280,60,10,10);
+  
+ 
+  
   //display the penguins
   for (int i =0; i < penguins.length; i++){
     //call out
     penguins[i].display();
     penguins[i].move();
   }
+  
+   //display cursor and gun
+  launcher();
+  
 }

@@ -1,5 +1,5 @@
-//penguin loop
-  
+
+//create the penguin class
 class penguin {
   //adding variables
   //PVector
@@ -113,8 +113,8 @@ class penguin {
     ellipse(85,250,3,3);//right
     ellipse(80,249,3,3);//mid
     
-     //reset to original
-     popMatrix();
+    //reset to original
+    popMatrix();
     
   }
   
@@ -135,9 +135,11 @@ class penguin {
     real = true;
   }
 
-  // hit detection
-  boolean hitBall(ball b) {
+    //see if the ball hits the penguin
+    boolean hitBall(ball b) {
+      //calculate the distance between the ball and penguin
     float d = dist(position.x, position.y - 35, b.x, b.y);
+    //if distance is small enough
     return d < 25;
   }
   

@@ -283,18 +283,16 @@ void loseTap(float x, float y) {
   line(93,275,85,283);
 
 
-  // crown (same)
+  //draw crown
   stroke(198,185,64);
   fill(247,229,60);
   triangle(75,251,72,257,77,256);
   triangle(85,251,82,256,87,257);
   triangle(80,250,76,256,84,256);
-
   noStroke();
   triangle(75,251,73,257,76,256);
   triangle(85,251,83,256,86,257);
   triangle(80,250,77,256,83,256);
-
   stroke(198,185,64);
   ellipse(75,250,3,3);
   ellipse(85,250,3,3);
@@ -307,7 +305,7 @@ void loseTap(float x, float y) {
 //restart button//play button
 void restart(float x, float y) {
 
-  // button base
+  //draw the tap
   rectMode(CENTER);
   fill(131,194,255);//sky blue
   stroke(77,116,191);//darker blue
@@ -334,7 +332,7 @@ void keyPressed() {
 //use mousepressed to allow players to click the button-restart to restart the game
 void mousePressed() {
   if (state == 1||state == 2) {
-    // button area centered at (200,235), size 95 x 42
+    //button area centered at (200,235), size 95 x 42
     if (mouseX > 152 && mouseX < 248 && mouseY > 214 && mouseY < 256) {
       restartGame();
     }
@@ -342,8 +340,7 @@ void mousePressed() {
 }
 
 
-// restart game
-
+//restart game
 void restartGame() {
   score = 0;
   state = 0;

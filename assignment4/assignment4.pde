@@ -12,7 +12,7 @@ void setup(){
    float startX = 40 + i * 60;
    float startY = 320;
    // some penguins are fake
-   boolean fakeOne = random(1) < 0.35;
+   boolean fakeOne = random(1) < 0.4;
    penguins[i] =new penguin(startX, startY, fakeOne);
    
   }

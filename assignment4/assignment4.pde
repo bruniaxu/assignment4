@@ -5,7 +5,8 @@
 //setup
 void setup(){
   size(400,400);
-
+  pengy = new penguin();
+  
 }
 
 
@@ -26,14 +27,6 @@ void draw(){
   ellipse(120,60,10,10);
   ellipse(280,60,10,10);
   
-  //draw the penguin
-  fill(0);
-  stroke(0);
-  ellipse(81,290,42,60);//neck + body
-  ellipse(82,310,47,55);//mid
-  ellipse(81,320,45,40);//bottom
-  triangle(60,320,55,330,80,340);//tail
-  stroke(255);
-  ellipse(80,275,40,32);//head
-    
+  pengy.display();
+  
 }

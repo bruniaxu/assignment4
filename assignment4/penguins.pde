@@ -1,5 +1,4 @@
-//penguin pengy;
-  
+//penguin loop
   
 class penguin {
   //adding variables

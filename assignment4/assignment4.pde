@@ -2,10 +2,7 @@
 //adding variables
 //array 
 penguin[] penguins;
-//<<<<<<< HEAD
-//=======
 int score = 0;
-//>>>>>>> scoring-system
 
 //setup
 void setup(){
@@ -42,7 +39,11 @@ void draw(){
   ellipse(120,60,10,10);
   ellipse(280,60,10,10);
   
- 
+  //draw text on scoreboard
+  fill(255);//white
+  textAlign(CENTER, CENTER);//make text in center
+  textSize(20); 
+  text(score, 200, 60);
   
   //display the penguins
   for (int i =0; i < penguins.length; i++){

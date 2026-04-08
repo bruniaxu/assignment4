@@ -81,7 +81,22 @@ class penguin {
     fill(255,190,59);//orange
     triangle(96,278,97,282,106,280);
     
-   
+    
+    if(ditto){
+      //draw the fake ones : ditto face
+      //draw ditto eyes
+      fill(0);
+      ellipse(89,278,3,3);
+    }else{
+      //draw face 
+      //draw eyes
+      fill(82,210,255);//blue
+      ellipse(89,278,6,6);
+      fill(0);
+      ellipse(89,278,5,5);
+      
+      
+    }
     
     //draw crown
     stroke(198,185,64);
@@ -99,22 +114,6 @@ class penguin {
     ellipse(85,250,3,3);//right
     ellipse(80,249,3,3);//mid
     
-    if(ditto){
-      //draw the fake ones : ditto face
-      //draw ditto eyes
-      fill(0);
-      ellipse(89,278,3,3);
-    }else{
-      //draw face 
-      //draw eyes
-      fill(82,210,255);//blue
-      ellipse(89,278,6,6);
-      fill(0);
-      ellipse(89,278,5,5);
-      
-     
-      
-    }
      //reset to original
      popMatrix();
     

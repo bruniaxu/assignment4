@@ -2,13 +2,15 @@
 //create class for ball
 class ball {
   //adding variables
+  //PVectors control the movements of the ball
   PVector position;
   PVector velocity;
   PVector acceleration;
-  float x;
+  float x; 
   float y;
-  boolean active = true;
+  boolean active = true;//see if the ball still display on screen
   //ball starting positions
+  //make a new ball starting at x, y position.
   ball(float sX,float sY) {
     x = sX;
     y = sY;

@@ -1,25 +1,37 @@
 //here's my assignment
 //adding variables
-//array 
+//make a array for penguins class
 penguin[] penguins;
+//score should be set as 0 in the beginning
 int score = 0;
+//use state decides which tap/screen the game is on , 0=playing| 1=winning tap|2+ losing tap
 int state = 0;
+//store the ball that will be launch
 ball launchBall;
 
 //setup
 void setup(){
+  //create a 400x400 canvas
   size(400,400);
-  //create more penguins
+  //create more penguins by using array with 6 penguins
   penguins = new penguin[6];
+  //create for loop that fills the array with penguins
   for (int i = 0; i < penguins.length; i++) {
+    //make each penguin's starting position different & make space for each in between
    float startX = 40 + i * 60;
+   //penguins walk on the same Y location
    float startY = 320;
-   // some penguins are fake
-   boolean fakeOne = random(1) < 0.4;
+   //some penguins are fake,they are generated randomly, random(1) make the value (0-1)
+   //if it is less than 3.5, fake penguins appear
+   boolean fakeOne = random(1) < 3.5;
+   //make a new object and put it in arrary
    penguins[i] =new penguin(startX, startY, fakeOne);
    
   }
+  //
   
+  
+  //the ball wont be displayed at the start of the game
   launchBall = null;
   
 }

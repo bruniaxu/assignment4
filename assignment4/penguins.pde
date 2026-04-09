@@ -1,4 +1,4 @@
-
+//this tap creates the penguins object
 //create the penguin class
 class penguin {
   //adding variables
@@ -7,7 +7,9 @@ class penguin {
   PVector velocity;
   PVector acceleration;
   //setting boolean for real and fake penguins
+  //making it display on the screen
   boolean real = true;
+  //ditto means fake penguin
   boolean ditto;//fake
   
   penguin(float x,float y, boolean fake){
@@ -117,7 +119,7 @@ class penguin {
     popMatrix();
     
   }
-  
+  //make the penguin move in a loop
   void move(){
     velocity.add(acceleration);
     position.add(velocity);

@@ -28,8 +28,6 @@ void setup(){
    penguins[i] =new penguin(startX, startY, fakeOne);
    
   }
-  //
-  
   
   //the ball wont be displayed at the start of the game
   launchBall = null;
@@ -55,32 +53,31 @@ void draw(){
   ellipse(280,60,10,10);
   
   if (state == 0) {
-    // playing
-
-    // move and display penguins
+    //playing the game
+    //move and display penguins
     for (int i = 0; i < penguins.length; i++) {
       penguins[i].move();
       penguins[i].display();
     }
 
-    // update and display ball
+    //update and display ball
     if (launchBall != null) {
       launchBall.move();
       launchBall.display();
 
-      // check collision with all penguins
+      //check collision with all penguins
       for (int i = 0; i < penguins.length; i++) {
         if (penguins[i].real && launchBall.active && penguins[i].hitBall(launchBall)) {
 
-          // ball disappears after hitting
+          //ball disappears after hitting
           launchBall.active = false;
 
           if (penguins[i].ditto) {
-            // fake penguin = gain score
+            //fake penguin = gain score
             score++;
             penguins[i].resetPenguin();
 
-            // win at 20 points
+            //win at 10 points (because 20 might be quite challenging for some people)
             if (score >= 10) {
               state = 1;
             }
@@ -92,17 +89,17 @@ void draw(){
         }
       }
 
-      // remove ball if off screen
+      // remove ball if off screen, or if it already hit something (penguin)
       if (launchBall.y < 0 ||launchBall.active == false) {
         launchBall = null;
       }
     }
     
-
+  //if the state is 1, show the winning tap
   } else if (state == 1) {
     // win screen
     EndScreen(true);
-
+  //if the state is 2, show the losing tap
   } else if (state == 2) {
     // lose screen
     EndScreen(false);
@@ -112,6 +109,7 @@ void draw(){
   
   //draw text on scoreboard
   fill(255);//white
+  //the function draws the score number 
   textAlign(CENTER, CENTER);//make text in center
   textSize(20); 
   text(score, 200, 60);
@@ -120,32 +118,35 @@ void draw(){
   launcher();
   
 }
+//draw the ending screen 
+//boolean is use to decide the outcome, if true = win; false = lose
 void EndScreen(boolean win) {
   fill(0, 140);
   noStroke();
   rect(0, 0, width, height);
 
   // panel
+  //transparent layer on top of the screen
   fill(213,191,255);
   stroke(255);
   strokeWeight(2);
   rect(80, 100, 240, 180, 20);
-
+  //if win is true, shows the winning tap, or else shows the losing tap
   if (win) {
     winTap(200, 155);
   } else {
     loseTap(200, 155);
   }
-
+ 
   restart(200, 235);
 }
 
 
-//winning tap
+//draws the winning tap
 void winTap(float x, float y) {
   pushMatrix();
 
-  //position
+  //position at center of the box
   translate(x - 82, y - 260);
 
   //draw the penguin/winning pic
@@ -229,7 +230,7 @@ void winTap(float x, float y) {
   popMatrix();
 }
 
-// lose icon
+//draw the losing icon and tap
 void loseTap(float x, float y) {
   pushMatrix();
   translate(x - 82, y - 260);
@@ -317,7 +318,8 @@ void loseTap(float x, float y) {
 //restart button//play button
 void restart(float x, float y) {
 
-  //draw the tap
+  //draw the tap/button
+  //change the rectangle mode to center so it is easier to position the button
   rectMode(CENTER);
   fill(131,194,255);//sky blue
   stroke(77,116,191);//darker blue
@@ -327,7 +329,7 @@ void restart(float x, float y) {
   noStroke();
   fill(77,116,191);//darker blue
   triangle(x - 8, y - 12,x - 8, y + 12,x + 12, y);
-  rectMode(CORNER);
+  rectMode(CORNER);//return this back to original mode
 }
 
 
